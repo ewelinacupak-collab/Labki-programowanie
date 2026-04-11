@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<Cinema.Domain.Entities.Movie>
+
 @{
+    ViewData["Title"] = "Lista filmów";
 }
+
+<h1>Lista filmów</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Dodaj film</a>
+</p>
+
+<table class="table table-bordered tabe-striped">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Rok</th>
+            <th>Opis</th>
+            <th>Czas trwania</th>
+            <th>Ocena</th>
+            <th>Kategoria</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+<tbody>
+    @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Name</td>
+                <td>@movie.Year</td>
+                <td>@movie.Description</td>
+                <td>@movie.DurationInMinutes min</td>
+                <td>@movie.Rating</td>
+                <td>@movie.Category?.Name</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger btn-sm">
+                        Usuń
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
