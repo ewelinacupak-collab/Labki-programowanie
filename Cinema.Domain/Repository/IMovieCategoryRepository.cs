@@ -13,5 +13,7 @@ namespace Cinema.Domain.Repository
         List<MovieCategory> GetMovieCategories();
 
         MovieCategory GetMovieCategyByName( string name);
+
+        MovieCategory GetMovieCategyById(int id);
     }
 }

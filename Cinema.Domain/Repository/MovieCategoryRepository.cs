@@ -21,6 +21,11 @@ namespace Cinema.Domain.Repository
             return movieCategory;
         }
 
+        public MovieCategory GetMovieCategyById(int id)
+        {
+            return movieCategory.First(c => c.Id == id);
+        }
+
         public MovieCategory GetMovieCategyByName(string name)
         {
             return movieCategory.First(c => c.Name == name);

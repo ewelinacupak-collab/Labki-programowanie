@@ -22,7 +22,7 @@ namespace Cinema.Domain.Entities
 
         //Relacja do kategorii
 
-        public MovieCategory MovieCategoryId { get; set; }
+        public int MovieCategoryId { get; set; }
 
         public MovieCategory Category {  get; set; }
     }
