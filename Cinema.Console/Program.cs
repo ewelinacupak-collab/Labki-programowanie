@@ -30,6 +30,7 @@ var movie2 = new Movie()
 repository.Add(movie1);
 repository.Add(movie2);
 
+
 foreach(var movie in repository.GetMovies())
 {
     Console.WriteLine("Nazwa filmu: " + movie.Name);
